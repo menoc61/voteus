@@ -1,9 +1,10 @@
-import React from "react";
-import { View, Text, Image, TextInput } from "react-native";
-
+import { View, Text, Image, TextInput, Pressable } from "react-native";
+import{ useNavigation } from '@react-navigation/native';
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
 const HomeHeader = ({ onSearch }) => {
+ const navigation = useNavigation();
+  const onPress = () => navigation.navigate('Profile',{name: 'meno'});
   return (
     <View
       style={{
@@ -24,7 +25,7 @@ const HomeHeader = ({ onSearch }) => {
           style={{ width: 90, height: 25 }}
         />
 
-        <View style={{ width: 45, height: 45 }}>
+        <Pressable style={{ width: 45, height: 45 }} onPress={onPress}>
           <Image
             source={assets.person01}
             resizeMode="contain"
@@ -41,7 +42,7 @@ const HomeHeader = ({ onSearch }) => {
               right: 0,
             }}
           />
-        </View>
+        </Pressable>
       </View>
 
       <View style={{ marginVertical: SIZES.font }}>

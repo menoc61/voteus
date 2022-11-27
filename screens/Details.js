@@ -27,8 +27,7 @@ const DetailsHeader = ({ data, navigation }) => (
   </View>
 );
 
-const Details = ({ route, navigation }) => {
-  const { data } = route.params;
+const Details = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
